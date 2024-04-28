@@ -1,0 +1,24 @@
+Cypress
+
+- yarn run cypress open
+
+- cypress folder -> integration -> delete all and write your own file
+
+- support -> command.js -> delete all content and write what's in other file
+
+- add chrome extension for getting element/query name "testing playground" you can see in the inspect
+-----------------------------------------
+
+
+- In playground we can see the identifier to test the e2e test by clicking on the laser-sight and then you search in the vscode tab to locate the element
+
+- uuidv4 is just there to fill random information
+
+- we need scrollIntoView() as sometimes cyperus unable to find the element to test as the element is hidden so it scrolls so that it could find the element
+
+- but sometime it is in view but then also it shows error so to deal with that we we "force:true"
+
+
+
+ 
+ 
