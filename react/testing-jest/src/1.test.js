@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import App from './1';
 
+// we can use app.spec.js also for name
+// and if we put the files in __test__ then folder including all the files are considered as test files
 describe('Noobs grouping',()=>{
 test('title and text on image', () => {
   render(<App />);
