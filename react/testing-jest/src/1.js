@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       and save to reload
     </div>
-    <input type="text" placeholder='this is trial' name="input box name" id="input id" className='input class' />
+    <input type="text" placeholder='this is trial' name="input box name" id="input id" className='input class' defaultValue={"name"} />
     <img title='ai gen image' src="" alt="" />
     </>
   );

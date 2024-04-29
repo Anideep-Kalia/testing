@@ -23,6 +23,7 @@ test('input box and everything related', () => {
   expect(input).toBeInTheDocument();
   expect(placeholder).toBeInTheDocument();
   expect(input).toHaveAttribute("name","input box name");   // checking attribute name 
+  expect(input).toHaveValue("name");   // checking attribute name 
 });
 
 // doesn't consist of classname
