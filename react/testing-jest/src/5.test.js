@@ -12,11 +12,18 @@ test("user event library",async()=>{
     expect(screen.getByText("hello")).toBeInTheDocument()
 });
 
-test("user event change event",async()=>{
+test("user event change event and props",async()=>{
     userEvent.setup();
-    render(<App/>)
+    const testfn=jest.fn();
+
+    render(<App name={"anil"} func={testfn}/>)
     const  ele=screen.getByRole("textbox");
+    const btn=screen.getAllByRole("button");
+
+    await userEvent.click(btn[1]);
     await act(async()=>{await userEvent.type(ele,"anideep")})
     
     expect(screen.getByText("anideep")).toBeInTheDocument()
+    expect(screen.getByText("anil")).toBeInTheDocument()
+    expect(testfn).toBeCalled();
 });
