@@ -1,6 +1,8 @@
-import { render,fireEvent,screen } from "@testing-library/react"
+import { render,fireEvent,screen,configure } from "@testing-library/react"
 import App from './3';
 import print from './helper/func1'
+configure({testIdAttribute:'id'})   //used so that we don't have to make test-id and can use id as test-id
+
 
 test.skip("snappshot test",()=>{
     const init=render(<App/>)
@@ -24,15 +26,19 @@ test("get all by label and checkbox",()=>{
     expect(eles).toBeChecked();
 })
 
-test("input value and placeholder",()=>{
+test("input value and placeholder and displayvalue",()=>{
     render(<App/>)
-    const input = screen.getByRole("textbox"); 
+    const input = screen.getAllByRole("textbox"); 
+    const tessid = screen.getByTestId("skills"); 
     const place = screen.getByPlaceholderText("this is trial"); 
+    const display=screen.getByDisplayValue("decided");
 
 
-    expect(input).toBeInTheDocument();
+    expect(input[0]).toBeInTheDocument();
+    expect(display).toBeInTheDocument();
+    expect(tessid).toBeInTheDocument();
     expect(place).toBeInTheDocument();
-    expect(input).toHaveValue("to be decided");
+    expect(input[1]).toHaveValue("to be decided");
 })
 
 test("for the functions which aren't returning to page",()=>{

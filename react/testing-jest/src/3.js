@@ -8,7 +8,8 @@ function App() {
     <>
 
     <h1>snapshot testing is done to check what amnmre the changes made after the test has been run</h1>
-    <input type="text" placeholder='this is trial' onChange={(e)=>{setData(e.target.value)}} defaultValue={"to be decided"} />
+    <input type="text" placeholder='this is trial' defaultValue={"decided"} />
+    <input type="text" placeholder='this' defaultValue={"to be decided"} />
 
     {/* get all by role testing */}
     <button onClick={()=>{setBtndata("button clicked")}}>this is it</button>
