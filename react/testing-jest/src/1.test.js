@@ -7,10 +7,13 @@ describe('Noobs grouping',()=>{
 test('title and text on image', () => {
   render(<App />);
   // so this is written like this because it will pass even if the cases don't match or the something else is written after this string but it we would have pass string then we don't get this privildge
+  // linkElement==linkElement`1
   const linkElement = screen.getByText(/and save to reload/i);   
+  const linkElement1 = screen.getByText("and save to reload",{exact:false});   
   const image = screen.getByTitle("ai gen image");   
 
   expect(linkElement).toBeInTheDocument();
+  expect(linkElement1).toBeInTheDocument();
   expect(image).toBeInTheDocument();
 });
 

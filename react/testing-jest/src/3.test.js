@@ -26,7 +26,7 @@ test("get all by label and checkbox",()=>{
     expect(eles).toBeChecked();
 })
 
-test("input value and placeholder and displayvalue",()=>{
+test("input value and placeholder and displayvalue and attributes",()=>{
     render(<App/>)
     const input = screen.getAllByRole("textbox"); 
     const tessid = screen.getByTestId("skills"); 
@@ -35,10 +35,24 @@ test("input value and placeholder and displayvalue",()=>{
 
 
     expect(input[0]).toBeInTheDocument();
+    expect(input[0]).toHaveAttribute("id");
+    // expect(input[0]).toHaveAttribute("data-test");
+    // expect(input[0]).toHaveClass("id");
     expect(display).toBeInTheDocument();
     expect(tessid).toBeInTheDocument();
     expect(place).toBeInTheDocument();
     expect(input[1]).toHaveValue("to be decided");
+})
+test("not attributes",()=>{
+    render(<App/>)
+    const input = screen.getAllByRole("textbox"); 
+    const tessid = screen.getByTestId("skills"); 
+    const place = screen.getByPlaceholderText("this is trial"); 
+    const display=screen.getByDisplayValue("decided");
+
+
+    expect(input[0]).not.toHaveAttribute("data-test");
+    expect(input[0]).not.toHaveClass("id");
 })
 
 test("for the functions which aren't returning to page",()=>{

@@ -8,7 +8,7 @@ function App() {
     <>
 
     <h1>snapshot testing is done to check what amnmre the changes made after the test has been run</h1>
-    <input type="text" placeholder='this is trial' defaultValue={"decided"} />
+    <input type="text" placeholder='this is trial' id="skills1" defaultValue={"decided"} />
     <input type="text" placeholder='this' defaultValue={"to be decided"} />
 
     {/* get all by role testing */}
